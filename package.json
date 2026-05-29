@@ -1,0 +1,23 @@
+{
+  "name": "telegram-chat-app",
+  "version": "1.0.0",
+  "description": "A real-time chat application like Telegram built with MERN stack",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "chat",
+    "mern",
+    "real-time",
+    "websocket",
+    "messaging"
+  ],
+  "author": "",
+  "license": "MIT"
+}
