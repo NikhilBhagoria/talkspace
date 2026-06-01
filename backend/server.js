@@ -11,6 +11,9 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import messageRoutes from './routes/messages.js';
 import conversationRoutes from './routes/conversations.js';
+import messagesNewRoutes from './routes/messages_new.js';
+import groupChatRoutes from './routes/groupChats.js';
+import userManagementRoutes from './routes/userManagement.js';
 
 // Import middleware
 import { handleErrors } from './middleware/auth.js';
@@ -40,6 +43,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/conversations', conversationRoutes);
+
+// New feature routes
+app.use('/api/messages', messagesNewRoutes);
+app.use('/api/groups', groupChatRoutes);
+app.use('/api/users', userManagementRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {
