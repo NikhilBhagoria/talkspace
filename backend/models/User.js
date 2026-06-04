@@ -29,6 +29,7 @@ const userSchema = new mongoose.Schema({
     default: '',
     maxlength: 150
   },
+  // Online status
   isOnline: {
     type: Boolean,
     default: false
@@ -36,6 +37,43 @@ const userSchema = new mongoose.Schema({
   lastSeen: {
     type: Date,
     default: Date.now
+  },
+  // Privacy & Security
+  blockedUsers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  blockedBy: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  // Preferences
+  preferences: {
+    notifications: {
+      type: Boolean,
+      default: true
+    },
+    muteAllNotifications: {
+      type: Boolean,
+      default: false
+    },
+    showOnlineStatus: {
+      type: Boolean,
+      default: true
+    },
+    allowGroupInvites: {
+      type: Boolean,
+      default: true
+    }
+  },
+  // Account status
+  isVerified: {
+    type: Boolean,
+    default: false
+  },
+  isSuspended: {
+    type: Boolean,
+    default: false
   },
   createdAt: {
     type: Date,
